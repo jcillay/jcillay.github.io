@@ -1,5 +1,4 @@
-import './style.css'
-
+import './style.css' ;
 import * as THREE from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
@@ -37,11 +36,11 @@ const ambient = new THREE.AmbientLight(0xFFFFFF)
 pointLight.position.set(5,5,5);
 scene.add(pointLight, ambient);
 
-// const lightHelper = new THREE.PointLightHelper(pointLight);
-// const gridHelper = new THREE.GridHelper(200,50);
-// scene.add(lightHelper, gridHelper);
+const lightHelper = new THREE.PointLightHelper(pointLight);
+const gridHelper = new THREE.GridHelper(200,50);
+scene.add(lightHelper, gridHelper);
 
-// const controls = new OrbitControls(camera, renderer.domElement)
+const controls = new OrbitControls(camera, renderer.domElement)
 function addStar(){
   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
   const material = new THREE.MeshStandardMaterial( {color: 'rgb(250, 250,250)'});
@@ -80,11 +79,16 @@ const moon = new THREE.Mesh(
 scene.add(moon)
 
 const earth = new THREE.Mesh(
-  new THREE.SphereGeometry(3,28,28),
+  new THREE.SphereGeometry(5,60,60),
   new THREE.MeshStandardMaterial( { color: 0xFFFF})
 );
+
+const jupiter = new THREE.Mesh(
+  new THREE.SphereGeometry(10,28,28),
+  new THREE.MeshStandardMaterial( { color: 0xF43F})
+);
 var sphereContainer = new THREE.Object3D();
-sphereContainer.add( moon, earth );
+sphereContainer.add( moon, earth , jupiter);
 
 scene.add( sphereContainer );
 
@@ -105,12 +109,21 @@ torus.position.z = cone_torus_z;
 torus.position.x = cone_torus_x;
 torus.position.y = cone_torus_y;
 
-earth.position.setZ(-20);
-earth.position.setX(-30);
+earth.position.setZ(10);
+earth.position.setX(0);
 earth.position.setY(0);
-moon.position.setZ(50);
-moon.position.setX(-30);
+moon.position.setZ(-20);
+moon.position.setX(-50);
 moon.position.setY(0);
+
+
+jupiter.position.setZ(-20);
+jupiter.position.setX(50);
+moon.position.setY(0);
+
+sphereContainer.position.setZ(-20);
+sphereContainer.position.setX(-50);
+// moon.position.setY(0);
 
 jake.position.z = -5;
 jake.position.x = 2;
