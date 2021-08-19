@@ -1,4 +1,8 @@
-import '/style.css'
+const cssModule = await import('./style.css', {
+  assert: { type: 'text' }
+});
+
+document.adoptedStyleSheets = [cssModule.default];
 
 import * as THREE from 'three';
 
