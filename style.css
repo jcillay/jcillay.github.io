@@ -24,7 +24,22 @@
     width: 50%;
     border-radius: 5px;
 }
-
+#kicking {
+    opacity: 95%;
+}
 #download:hover{
     background: #00729D;
+}
+
+#moreWork {
+    display: none;
+}
+#moreNLP {
+    display: none;
+}
+#moreSpotify {
+    display: none;
+}
+#more {
+    display: none;
 }
