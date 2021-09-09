@@ -14,3 +14,17 @@
         width: 50%;
     }
 }
+
+#download {
+    display: block;
+    background: #00A9D4;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 5px;
+}
+
+#download:hover{
+    background: #00729D;
+}
